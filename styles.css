@@ -1,0 +1,1007 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+@font-face {
+    font-family: 'Tungsten';
+    src: url('ttf/Tungsten Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'UrbanDecay';
+    src: url('ttf/UrbanDecaySP.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* General Body Styles */
+body {
+    background-color: #1a1a1a;
+    color: #fff;
+    font-family: 'Tungsten', 'VT323', monospace;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnF3eTdwOTQwZGszZjZ0d2E2Mzhyb2oydnd3NHBrdnIxM2Y5eDY5ZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/K4ppHUZTYKJYk/giphy.gif');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Floating Background Images */
+.floating-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.floating-img {
+    position: absolute;
+    opacity: 0.3;
+    animation: float 20s infinite linear;
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.floating-img:nth-child(1) {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+    animation-duration: 25s;
+}
+
+.floating-img:nth-child(2) {
+    top: 20%;
+    right: 15%;
+    animation-delay: -3s;
+    animation-duration: 30s;
+}
+
+.floating-img:nth-child(3) {
+    bottom: 30%;
+    left: 20%;
+    animation-delay: -7s;
+    animation-duration: 22s;
+}
+
+.floating-img:nth-child(4) {
+    bottom: 20%;
+    right: 25%;
+    animation-delay: -12s;
+    animation-duration: 28s;
+}
+
+.floating-img:nth-child(5) {
+    top: 50%;
+    left: 5%;
+    animation-delay: -5s;
+    animation-duration: 35s;
+}
+
+.floating-img:nth-child(6) {
+    top: 60%;
+    right: 10%;
+    animation-delay: -15s;
+    animation-duration: 26s;
+}
+
+.floating-img:nth-child(7) {
+    top: 30%;
+    left: 50%;
+    animation-delay: -8s;
+    animation-duration: 32s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.3;
+    }
+    25% {
+        transform: translateY(-20px) rotate(90deg);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateY(-40px) rotate(180deg);
+        opacity: 0.3;
+    }
+    75% {
+        transform: translateY(-20px) rotate(270deg);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(0px) rotate(360deg);
+        opacity: 0.3;
+    }
+}
+
+/* VHS Overlay Effect */
+.vhs-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        repeating-linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.3) 0,
+            rgba(0, 0, 0, 0.3) 1px,
+            transparent 1px,
+            transparent 4px
+        );
+    pointer-events: none;
+    z-index: 9999;
+    animation: vhs-flicker 0.15s infinite;
+}
+
+@keyframes vhs-flicker {
+    0% { opacity: 0.9; }
+    50% { opacity: 0.8; }
+    100% { opacity: 0.9; }
+}
+
+/* Winamp Player Styles */
+.winamp-player {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 300px;
+    background: #c0c0c0;
+    border: 2px solid #000;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    font-family: 'Tahoma', sans-serif;
+    display: block; /* Initially visible */
+}
+
+.winamp-header {
+    background: linear-gradient(to right, #000080, #1084d0);
+    padding: 3px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move;
+}
+
+.winamp-title {
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.winamp-btn {
+    background: #c0c0c0;
+    border: 1px solid #000;
+    width: 16px;
+    height: 14px;
+    margin-left: 2px;
+    font-family: 'Marlett', 'Arial';
+    font-size: 10px;
+    line-height: 10px;
+    text-align: center;
+}
+
+.winamp-body {
+    padding: 10px;
+    background: #c0c0c0;
+}
+
+.winamp-display {
+    background: #000;
+    color: #00ff00;
+    padding: 5px;
+    border: 1px inset #808080;
+}
+
+.track-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.visualizer {
+    height: 20px;
+    display: flex;
+    align-items: flex-end;
+    margin-top: 5px;
+}
+
+.visualizer .bar {
+    width: 10px;
+    background: #00ff00;
+    margin: 0 1px;
+    animation: visualize 0.5s infinite alternate;
+}
+
+@keyframes visualize {
+    from { height: 2px; }
+    to { height: 18px; }
+}
+
+.winamp-controls-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.control-btn {
+    background: #c0c0c0;
+    border: 1px outset #fff;
+    width: 23px;
+    height: 23px;
+}
+
+.volume-slider {
+    flex-grow: 1;
+    margin: 0 10px;
+}
+
+.playlist-toggle {
+    margin-top: 10px;
+    cursor: pointer;
+    color: #000080;
+}
+
+.playlist {
+    background: #000;
+    color: #00ff00;
+    max-height: 150px;
+    overflow-y: auto;
+    display: block; /* Shown by default */
+}
+
+.playlist-item {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.playlist-item.active, .playlist-item:hover {
+    background: #000080;
+    color: #fff;
+}
+
+/* Launch Nostalgia Button */
+.launch-nostalgia {
+    display: none; /* Hidden by default */
+}
+
+/* Main Content Styles */
+.main-content {
+    padding-top: 80px;
+}
+
+.content-section {
+    padding: 60px 0;
+    border-bottom: 2px dashed #ff00ff;
+}
+
+.section-title {
+    font-family: 'UrbanDecay', 'Orbitron', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffff00;
+}
+
+.section-title .first-word {
+    color: #ff0000;
+}
+
+.section-subtitle {
+    font-family: 'UrbanDecay', 'VT323', monospace;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-title {
+    font-family: 'UrbanDecay', 'Orbitron', sans-serif;
+    font-size: 6rem;
+    font-weight: 900;
+    color: #ff00ff;
+    text-shadow: 5px 5px 0px #00ffff;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-family: 'UrbanDecay', 'Orbitron', sans-serif;
+    font-size: 2rem;
+    color: #fff;
+    margin-top: 20px;
+}
+
+.hero-description {
+    font-family: 'UrbanDecay', 'Caveat', cursive;
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+.cta-btn {
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+    border: 2px solid #fff;
+    transition: all 0.3s ease;
+}
+
+.cta-btn.primary {
+    background: #ff00ff;
+    color: #fff;
+}
+
+.cta-btn.primary:hover {
+    background: #fff;
+    color: #ff00ff;
+}
+
+/* Soundtrack Section - TV Grid */
+.tv-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.tv-item {
+    position: relative;
+    width: 100%;
+    padding-top: 75%; /* Aspect ratio for the TV, adjust if needed */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.tv-item:hover {
+    transform: scale(1.05);
+}
+
+.tv-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none; /* Allows clicking through the frame */
+}
+
+.tv-screen {
+    position: absolute;
+    top: 10%; /* Еще немного увеличил отступ сверху */
+    left: 7%; /* Оставляю как есть */
+    width: 86%;   /* Оставляю как есть */
+    height: 75%;  /* Оставляю как есть */
+    overflow: hidden;
+    background: #000;
+    z-index: 1;
+}
+
+.tv-gif {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the gif covers the screen area */
+}
+
+/* Movies Section - Carousel */
+.movie-carousel {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: visible;
+    border-radius: 10px;
+    padding: 0 100px;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 700px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+    width: 500%; /* 5 slides * 100% */
+}
+
+.carousel-slide {
+    width: 20%; /* 100% / 5 slides */
+    height: 100%;
+    position: relative;
+    padding: 0 20px;
+    box-sizing: border-box;
+    transition: all 0.5s ease;
+}
+
+.carousel-slide .movie-poster {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 15px;
+    transform: scale(0.8);
+    opacity: 0.6;
+    transition: all 0.5s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Active slide (center) - будет управляться через JavaScript */
+.carousel-slide.center .movie-poster {
+    transform: scale(1) !important;
+    opacity: 1 !important;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6) !important;
+    z-index: 5 !important;
+}
+
+/* Adjacent slides - будет управляться через JavaScript */
+.carousel-slide.adjacent .movie-poster {
+    transform: scale(0.9) !important;
+    opacity: 0.8 !important;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4) !important;
+    z-index: 3 !important;
+}
+
+.carousel-slide .movie-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.carousel-slide:hover .movie-poster img {
+    transform: scale(1.05);
+}
+
+.carousel-slide .movie-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.4) 80%, transparent 100%);
+    color: #fff;
+    text-align: center;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.carousel-slide:hover .movie-info,
+.carousel-slide.center .movie-info {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.carousel-slide .movie-info h3 {
+    font-family: 'Tungsten', 'Arial Black', sans-serif;
+    font-size: 2.2rem;
+    color: #fff;
+    margin: 0 0 10px 0;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.9);
+    text-transform: uppercase;
+}
+
+.carousel-slide .movie-info .movie-year {
+    background: #ff0000;
+    color: #fff;
+    font-family: 'VT323', monospace;
+    padding: 5px 15px;
+    display: inline-block;
+    margin: 10px 0;
+    border-radius: 3px;
+    font-size: 1.2rem;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.5);
+}
+
+.carousel-slide .movie-info .movie-description {
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #fff;
+    margin: 10px 0 0 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Always show info on mobile */
+@media (max-width: 768px) {
+    .carousel-slide .movie-info {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    
+    .movie-carousel {
+        padding: 0 50px;
+    }
+    
+    .carousel-container {
+        height: 600px;
+    }
+}
+
+/* Carousel Navigation Buttons */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #00ffff;
+    color: #00ffff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background: #00ffff;
+    color: #000;
+    box-shadow: 0 0 20px #00ffff;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev-btn {
+    left: 20px;
+}
+
+.next-btn {
+    right: 20px;
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid #00ffff;
+}
+
+.indicator:hover {
+    background: #00ffff;
+    transform: scale(1.2);
+}
+
+.indicator.active {
+    background: #00ffff;
+    box-shadow: 0 0 10px #00ffff;
+}
+
+/* NEW Games Section - Rebuilt from scratch */
+.game-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    padding-top: 20px;
+}
+
+.game-magazine-cover {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 8px 8px 20px rgba(0,0,0,0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 3px solid #111;
+}
+
+.game-magazine-cover:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 12px 12px 25px rgba(255, 0, 191, 0.4);
+}
+
+.game-magazine-cover .cover-art {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.game-magazine-cover:hover .cover-art {
+    transform: scale(1.1);
+}
+
+.game-magazine-cover .cover-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background: linear-gradient(to top, rgba(0,0,0,0.98) 30%, rgba(0,0,0,0.7) 60%, transparent 100%);
+    color: #fff;
+    text-align: left;
+    z-index: 2;
+}
+
+.game-magazine-cover h3 {
+    font-family: 'Tungsten', 'Arial Black', sans-serif;
+    text-transform: uppercase;
+    font-size: 2.2rem;
+    line-height: 1;
+    margin: 0 0 5px 0;
+    color: #fff;
+    text-shadow: 3px 3px 0px #000;
+}
+
+.game-magazine-cover .platform-tag {
+    background: #ffff00;
+    color: #000;
+    font-family: 'VT323', monospace;
+    padding: 4px 10px;
+    display: inline-block;
+    font-size: 1.1rem;
+    border-radius: 2px;
+    font-weight: bold;
+}
+
+.game-magazine-cover::before {
+    content: 'ISSUE #01';
+    position: absolute;
+    top: 15px;
+    left: -50px;
+    width: 150px;
+    transform: rotate(-45deg);
+    background: #ff0000;
+    color: #fff;
+    text-align: center;
+    font-family: 'Tungsten', 'Impact', sans-serif;
+    font-size: 1rem;
+    padding: 5px;
+    z-index: 3;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.game-magazine-cover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 15px;
+    width: 8px;
+    height: 40%;
+    background: repeating-linear-gradient(
+        -45deg,
+        #ffff00,
+        #ffff00 10px,
+        #ff0000 10px,
+        #ff0000 20px
+    );
+    z-index: 3;
+}
+
+/* Moments Section - Compact Carousel */
+.moments-carousel {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    padding: 0 60px;
+}
+
+.moments-carousel-container {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #00ffff;
+}
+
+.moments-carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+    width: 500%; /* 5 slides * 100% */
+}
+
+.moments-slide {
+    width: 20%; /* 100% / 5 slides */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+.moments-slide h3 {
+    font-family: 'Tungsten', 'Arial Black', sans-serif;
+    font-size: 1.8rem;
+    color: #fff;
+    margin: 0 0 10px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    text-transform: uppercase;
+}
+
+.moments-slide .moment-year {
+    background: #ff0000;
+    color: #fff;
+    font-family: 'VT323', monospace;
+    padding: 4px 12px;
+    display: inline-block;
+    margin: 10px 0;
+    border-radius: 3px;
+    font-size: 1.1rem;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.5);
+}
+
+.moments-slide .moment-description {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #fff;
+    margin: 15px 0 0 0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+    max-width: 90%;
+}
+
+.moments-slide .moment-image {
+    width: 160px;
+    height: 110px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border: 2px solid #00ffff;
+    transition: all 0.3s ease;
+}
+
+.moments-slide .moment-image:hover {
+    transform: scale(1.05);
+}
+
+.moments-slide .moment-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.moments-slide .moment-image:hover img {
+    transform: scale(1.1);
+}
+
+/* Moments Carousel Navigation Buttons */
+.moments-carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #00ffff;
+    color: #00ffff;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.moments-carousel-btn:hover {
+    background: #00ffff;
+    color: #000;
+    box-shadow: 0 0 15px #00ffff;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.moments-carousel-btn.prev-btn {
+    left: 10px;
+}
+
+.moments-carousel-btn.next-btn {
+    right: 10px;
+}
+
+/* Moments Carousel Indicators */
+.moments-carousel-indicators {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.moments-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid #00ffff;
+}
+
+.moments-indicator:hover {
+    background: #00ffff;
+    transform: scale(1.2);
+}
+
+.moments-indicator.active {
+    background: #00ffff;
+    box-shadow: 0 0 8px #00ffff;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .moments-carousel {
+        padding: 0 40px;
+        max-width: 90%;
+    }
+    
+    .moments-carousel-container {
+        height: 300px;
+    }
+    
+    .moments-slide {
+        padding: 20px 15px;
+    }
+    
+    .moments-slide .moment-image {
+        width: 130px;
+        height: 85px;
+    }
+    
+    .moments-slide h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Other Content Grids (Albums, etc.) */
+.submit-form {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border: 2px solid #00ffff;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group textarea {
+    width: 100%;
+    height: 120px;
+    padding: 15px;
+    background: #222;
+    border: 1px solid #00ffff;
+    color: #fff;
+    font-family: 'Tungsten', 'VT323', monospace;
+    font-size: 1.2rem;
+    resize: vertical;
+}
+
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: #ff00ff;
+    color: #fff;
+    border: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #c000c0;
+}
+
+/* Footer */
+.footer {
+    background: #000;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.footer-section {
+    margin: 20px;
+}
+
+.footer-section h4 {
+    color: #ff00ff;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.social-links a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 1.5rem;
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+}
+
+/* Twitter Icon */
+.twitter-icon {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.twitter-icon a {
+    display: block;
+    width: 100px;
+    height: 100px;
+    border: 2px solid #00ffff;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 16px;
+    transition: all 0.3s ease;
+}
+
+.twitter-icon a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #00ffff;
+}
+
+.twitter-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+} 

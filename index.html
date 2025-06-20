@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RetroRush - Welcome to the 2000s</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=VT323&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Floating Background Images -->
+    <div class="floating-bg">
+        <img src="img/backg/1.png" alt="Background 1" class="floating-img">
+        <img src="img/backg/2.png" alt="Background 2" class="floating-img">
+        <img src="img/backg/3.png" alt="Background 3" class="floating-img">
+        <img src="img/backg/4.png" alt="Background 4" class="floating-img">
+        <img src="img/backg/5.png" alt="Background 5" class="floating-img">
+        <img src="img/backg/6.png" alt="Background 6" class="floating-img">
+        <img src="img/backg/7.png" alt="Background 7" class="floating-img">
+    </div>
+
+    <!-- Twitter Icon -->
+    <div class="twitter-icon">
+        <a href="https://x.com/home" target="_blank">
+            <img src="img/twitter.png" alt="Twitter/X">
+        </a>
+    </div>
+
+    <!-- VHS Overlay Effect -->
+    <div class="vhs-overlay"></div>
+    
+    <!-- Winamp Player -->
+    <div class="winamp-player" id="winampPlayer">
+        <div class="winamp-header">
+            <div class="winamp-title">Winamp</div>
+            <div class="winamp-controls">
+                <button class="winamp-btn minimize">_</button>
+                <button class="winamp-btn maximize">□</button>
+                <button class="winamp-btn close">×</button>
+            </div>
+        </div>
+        <div class="winamp-body">
+            <div class="winamp-display">
+                <div class="track-info">
+                    <div class="track-name" id="trackName">Sum 41 - Still Waiting</div>
+                    <div class="track-time" id="trackTime">0:00 / 3:24</div>
+                </div>
+                <div class="visualizer">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+            <div class="winamp-controls-bottom">
+                <button class="control-btn" id="prevBtn"><i class="fas fa-step-backward"></i></button>
+                <button class="control-btn play-btn" id="playBtn"><i class="fas fa-play"></i></button>
+                <button class="control-btn" id="nextBtn"><i class="fas fa-step-forward"></i></button>
+                <button class="control-btn" id="stopBtn"><i class="fas fa-stop"></i></button>
+                <div class="volume-slider">
+                    <input type="range" id="volumeSlider" min="0" max="100" value="70">
+                </div>
+            </div>
+            <div class="playlist-toggle" id="playlistToggle">
+                <i class="fas fa-list"></i> Playlist
+            </div>
+        </div>
+        <div class="playlist" id="playlist">
+            <div class="playlist-item active" data-track="0">50 Cent - In Da Club</div>
+            <div class="playlist-item" data-track="1">Avril Lavigne - Rock N Roll</div>
+            <div class="playlist-item" data-track="2">Blink-182 - All The Small Things</div>
+            <div class="playlist-item" data-track="3">Britney Spears - Toxic</div>
+            <div class="playlist-item" data-track="4">Christina Aguilera - Beautiful</div>
+            <div class="playlist-item" data-track="5">Eminem - Lose Yourself</div>
+            <div class="playlist-item" data-track="6">Evanescence - Bring Me To Life</div>
+            <div class="playlist-item" data-track="7">Gorillaz - Feel Good Inc</div>
+            <div class="playlist-item" data-track="8">Green Day - American Idiot</div>
+            <div class="playlist-item" data-track="9">Linkin Park - In The End</div>
+            <div class="playlist-item" data-track="10">Nelly - Hot In Herre</div>
+            <div class="playlist-item" data-track="11">Outkast - Hey Ya</div>
+            <div class="playlist-item" data-track="12">Rihanna - Pon De Replay</div>
+            <div class="playlist-item" data-track="13">Sum 41 - Still Waiting</div>
+            <div class="playlist-item" data-track="14">The Killers - Mr. Brightside</div>
+        </div>
+    </div>
+
+    <!-- Launch Nostalgia Button -->
+    <div class="launch-nostalgia" id="launchNostalgia">
+        <button class="nostalgia-btn">
+            <i class="fas fa-play"></i>
+            <span>Launch Nostalgia</span>
+        </button>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">RetroRush</h1>
+                    <p class="hero-subtitle">Let's rewind the best decade ever.</p>
+                    <p class="hero-description">The smell of burnt CDs, the click of MSN Messenger — welcome back.</p>
+                    <div class="hero-cta">
+                        <button class="cta-btn primary" onclick="scrollToSection('soundtrack')">
+                            <i class="fas fa-music"></i> Start the Journey
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Soundtrack Section -->
+        <section id="soundtrack" class="content-section soundtrack-section">
+            <div class="container">
+                <h2 class="section-title">📺 <span class="first-word">Soundtrack</span> of Our Youth</h2>
+                <p class="section-subtitle">15 hits that defined a generation</p>
+                <div class="tv-grid">
+                    <div class="tv-item" data-track="13" data-artist="Sum 41">
+                        <img src="img/musictv.png" class="tv-frame" alt="TV Frame">
+                        <div class="tv-screen">
+                            <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3loc2lhZ3hmZXN1aDh2ZXplbjFkbTU1amp5Z2U4cWl6MDNydHJkayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fe4dwRw6nZKWDRjMzP/giphy.gif" class="tv-gif" alt="Sum 41">
+                        </div>
+                    </div>
+                    <div class="tv-item" data-track="9" data-artist="Linkin Park">
+                        <img src="img/musictv.png" class="tv-frame" alt="TV Frame">
+                        <div class="tv-screen">
+                            <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDFpcG56ODExcm9vc2k4OHc1bDA5NDg0dXlsbHhidHdwb2Jwbm14YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UiQqRvpWCk4KobF3xL/giphy.gif" class="tv-gif" alt="Linkin Park">
+                        </div>
+                    </div>
+                    <div class="tv-item" data-track="8" data-artist="Green Day">
+                        <img src="img/musictv.png" class="tv-frame" alt="TV Frame">
+                        <div class="tv-screen">
+                            <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWs5dDNlYmZpYXV0eHR4NHFkenBoanFiMjF4YWR5OTM3aW4yMmVxNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l3vQWJuTzIyLnlWfe/giphy.gif" class="tv-gif" alt="Green Day">
+                        </div>
+                    </div>
+                    <div class="tv-item" data-track="1" data-artist="Avril Lavigne">
+                        <img src="img/musictv.png" class="tv-frame" alt="TV Frame">
+                        <div class="tv-screen">
+                            <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExazhjMGljNGt5MjQyNXpnMXZ6Nnd6enF5czJ1cjNubDcxb3JjeHA3ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1ioHOweNbNF1q11pna/giphy.gif" class="tv-gif" alt="Avril Lavigne">
+                        </div>
+                    </div>
+                    <div class="tv-item" data-track="2" data-artist="Blink-182">
+                        <img src="img/musictv.png" class="tv-frame" alt="TV Frame">
+                        <div class="tv-screen">
+                            <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGkzc2RzY213NWQ5bnUyMXFpcmc0amthazljMnM1NThwOGdqYjhzYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0HFir4fPkEqpFyik/giphy.gif" class="tv-gif" alt="Blink-182">
+                        </div>
+                    </div>
+                    <div class="tv-item" data-track="5" data-artist="Eminem">
+                        <img src="img/musictv.png" class="tv-frame" alt="TV Frame">
+                        <div class="tv-screen">
+                            <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaTNrYjZvamtzM3k3YTk0YjB0ZWp1MXk3c2hxdjVocnpjYnkzbjNvNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o6fJ0ZgJ1bLpwXDtm/giphy.gif" class="tv-gif" alt="Eminem">
+                        </div>
+                    </div>
+                    <div class="tv-item" data-track="3" data-artist="Britney Spears">
+                        <img src="img/musictv.png" class="tv-frame" alt="TV Frame">
+                        <div class="tv-screen">
+                            <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExOWNqOHg0eDM1ZzdiczhuYmgya2RtbmVpZWN3ZnJ3a3gydmF5bmNwciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8wfma7DJXm46KFsZjK/giphy.gif" class="tv-gif" alt="Britney Spears">
+                        </div>
+                    </div>
+                    <div class="tv-item" data-track="10" data-artist="Nelly">
+                        <img src="img/musictv.png" class="tv-frame" alt="TV Frame">
+                        <div class="tv-screen">
+                            <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2ZoNGtzMzBra2kweTNoY2g1eHF1cm9meDlrMGtpcmx6ZnN1NXR2NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/OhEiAtIm0LKgRHLrAA/giphy.gif" class="tv-gif" alt="Nelly">
+                        </div>
+                    </div>
+                    <div class="tv-item" data-track="14" data-artist="The Killers">
+                        <img src="img/musictv.png" class="tv-frame" alt="TV Frame">
+                        <div class="tv-screen">
+                            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExanF3eWNxdjY2cTV1Z2UwczAzajg5OHN0bWJweHVjYjU3cWQ2cDZ0NCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Rh9icSZ5Zqu3K/giphy.gif" class="tv-gif" alt="The Killers">
+                        </div>
+                    </div>
+                    <div class="tv-item" data-track="11" data-artist="Outkast">
+                        <img src="img/musictv.png" class="tv-frame" alt="TV Frame">
+                        <div class="tv-screen">
+                            <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMm53MDJqMjM2NGc5ejQzZnhzcWI5YmkwbTloa3J3Z2xjb3RtZ3VheSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/pDnCXXjNp7SDhRorfG/giphy.gif" class="tv-gif" alt="Outkast">
+                        </div>
+                    </div>
+                    <div class="tv-item" data-track="0" data-artist="50 Cent">
+                        <img src="img/musictv.png" class="tv-frame" alt="TV Frame">
+                        <div class="tv-screen">
+                            <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmR5Zm44Z2pqd216OGZydXFqMWNjcHR0Yzh6MzF0Y29hM3V2OXI4diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/22Qtxycwr69yw/giphy.gif" class="tv-gif" alt="50 Cent">
+                        </div>
+                    </div>
+                    <div class="tv-item" data-track="12" data-artist="Rihanna">
+                        <img src="img/musictv.png" class="tv-frame" alt="TV Frame">
+                        <div class="tv-screen">
+                            <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExa3l1Y2h3YWw4azhmNXl2d2wwaTFzN3RjbjN0Zzlna2J1dnAxb2hieSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vAphIkJzcrXq0/giphy.gif" class="tv-gif" alt="Rihanna">
+                        </div>
+                    </div>
+                    <div class="tv-item" data-track="7" data-artist="Gorillaz">
+                        <img src="img/musictv.png" class="tv-frame" alt="TV Frame">
+                        <div class="tv-screen">
+                            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaTVkbmQxdjRjcmhoNngwaHFoa3Q4MDl2YmF4NHhyeDlpcjhjZ3Q4dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/f8njT3ZKtio2NXssHt/giphy.gif" class="tv-gif" alt="Gorillaz">
+                        </div>
+                    </div>
+                    <div class="tv-item" data-track="6" data-artist="Evanescence">
+                        <img src="img/musictv.png" class="tv-frame" alt="TV Frame">
+                        <div class="tv-screen">
+                            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXVkcWk2Yzg3NDN0NnVrOXhoNXd3cHlld2hzMjYydGxxbmR2YmlociZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LpkMpzSZI6nNZMFk22/giphy.gif" class="tv-gif" alt="Evanescence">
+                        </div>
+                    </div>
+                    <div class="tv-item" data-track="4" data-artist="Christina Aguilera">
+                        <img src="img/musictv.png" class="tv-frame" alt="TV Frame">
+                        <div class="tv-screen">
+                            <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXo5Y2Y1aXB0ODBxM2RqNGU3MXcyN2lzZzJ0azZ3OGpzaTQybjZlOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/P9WPb8wuTy7Cg/giphy.gif" class="tv-gif" alt="Christina Aguilera">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Movies Section -->
+        <section id="movies" class="content-section movies-section">
+            <div class="container">
+                <h2 class="section-title">🎬 <span class="first-word">Movies</span> that Shaped a Generation</h2>
+                <p class="section-subtitle">5 cult classics that defined the era</p>
+                
+                <div class="movie-carousel">
+                    <div class="carousel-container">
+                        <div class="carousel-track">
+                            <div class="carousel-slide active">
+                                <div class="movie-poster">
+                                    <img src="https://kinohype.co/uploads/posts/2024-02/858f04b4620d9e6609.webp" alt="Mean Girls">
+                                    <div class="movie-info">
+                                        <h3>Mean Girls</h3>
+                                        <p class="movie-year">2004</p>
+                                        <p class="movie-description">The ultimate high school comedy that gave us "fetch" and Regina George.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-slide">
+                                <div class="movie-poster">
+                                    <img src="https://m.media-amazon.com/images/I/613ypTLZHsL.jpg" alt="The Matrix Reloaded">
+                                    <div class="movie-info">
+                                        <h3>The Matrix Reloaded</h3>
+                                        <p class="movie-year">2003</p>
+                                        <p class="movie-description">Bullet time, leather coats, and the question: red pill or blue pill?</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-slide">
+                                <div class="movie-poster">
+                                    <img src="https://images.justwatch.com/poster/254327499/s718/american-pie-2.jpg" alt="American Pie 2">
+                                    <div class="movie-info">
+                                        <h3>American Pie 2</h3>
+                                        <p class="movie-year">2001</p>
+                                        <p class="movie-description">The sequel that made us all want to go to summer camp.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-slide">
+                                <div class="movie-poster">
+                                    <img src="https://m.media-amazon.com/images/I/A16Y9ujrw3L.jpg" alt="The Lord of the Rings">
+                                    <div class="movie-info">
+                                        <h3>The Lord of the Rings: Return of the King</h3>
+                                        <p class="movie-year">2003</p>
+                                        <p class="movie-description">Epic fantasy that won 11 Oscars and our hearts forever.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-slide">
+                                <div class="movie-poster">
+                                    <img src="https://i.ebayimg.com/images/g/jNcAAOSw7GRZCiXq/s-l1200.jpg" alt="Spider-Man">
+                                    <div class="movie-info">
+                                        <h3>Spider-Man</h3>
+                                        <p class="movie-year">2002</p>
+                                        <p class="movie-description">Tobey Maguire's web-slinging debut that started the superhero craze.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="carousel-btn prev-btn" id="carouselPrevBtn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn next-btn" id="carouselNextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    
+                    <div class="carousel-indicators">
+                        <span class="indicator active" data-slide="0"></span>
+                        <span class="indicator" data-slide="1"></span>
+                        <span class="indicator" data-slide="2"></span>
+                        <span class="indicator" data-slide="3"></span>
+                        <span class="indicator" data-slide="4"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW Games Section -->
+        <section id="games-revamped" class="content-section">
+            <div class="container">
+                <h2 class="section-title">🕹️ <span class="first-word">Games</span> We Couldn't Stop Playing</h2>
+                <p class="section-subtitle">10 games that consumed our lives</p>
+                <div class="game-gallery">
+                    <div class="game-magazine-cover">
+                        <img class="cover-art" src="https://m.media-amazon.com/images/I/61jWckZEL1L._UF1000,1000_QL80_.jpg" alt="Tony Hawk's Pro Skater 2">
+                        <div class="cover-overlay">
+                            <h3>Tony Hawk's Pro Skater 2</h3>
+                            <span class="platform-tag">PS1/PS2</span>
+                        </div>
+                    </div>
+                    <div class="game-magazine-cover">
+                        <img class="cover-art" src="https://upload.wikimedia.org/wikipedia/ru/thumb/2/26/V_City-PS2.jpg/960px-V_City-PS2.jpg" alt="GTA: Vice City">
+                        <div class="cover-overlay">
+                            <h3>GTA: Vice City</h3>
+                            <span class="platform-tag">PS2/PC</span>
+                        </div>
+                    </div>
+                    <div class="game-magazine-cover">
+                        <img class="cover-art" src="https://m.media-amazon.com/images/I/51lGDCqt+fL._UF1000,1000_QL80_.jpg" alt="Halo: Combat Evolved">
+                        <div class="cover-overlay">
+                            <h3>Halo: Combat Evolved</h3>
+                            <span class="platform-tag">Xbox</span>
+                        </div>
+                    </div>
+                    <div class="game-magazine-cover">
+                        <img class="cover-art" src="https://upload.wikimedia.org/wikipedia/ru/thumb/4/4e/Doom3box.jpg/274px-Doom3box.jpg" alt="DOOM 3">
+                        <div class="cover-overlay">
+                            <h3>DOOM 3</h3>
+                            <span class="platform-tag">PC</span>
+                        </div>
+                    </div>
+                    <div class="game-magazine-cover">
+                        <img class="cover-art" src="https://upload.wikimedia.org/wikipedia/ru/f/ff/The_Sims_2_cover.jpg" alt="The Sims 2">
+                        <div class="cover-overlay">
+                            <h3>The Sims 2</h3>
+                            <span class="platform-tag">PC</span>
+                        </div>
+                    </div>
+                    <div class="game-magazine-cover">
+                        <img class="cover-art" src="https://upload.wikimedia.org/wikipedia/en/b/b4/Serious_Sam_-_The_First_Encounter.jpg" alt="Serious Sam: The First Encounter">
+                        <div class="cover-overlay">
+                            <h3>Serious Sam: TFE</h3>
+                            <span class="platform-tag">PC</span>
+                        </div>
+                    </div>
+                    <div class="game-magazine-cover">
+                        <img class="cover-art" src="https://upload.wikimedia.org/wikipedia/ru/thumb/1/15/NFS-Most-Wanted-Front.jpg/274px-NFS-Most-Wanted-Front.jpg" alt="Need for Speed: Most Wanted">
+                        <div class="cover-overlay">
+                            <h3>NFS: Most Wanted</h3>
+                            <span class="platform-tag">PS2/PC/Xbox</span>
+                        </div>
+                    </div>
+                    <div class="game-magazine-cover">
+                        <img class="cover-art" src="https://upload.wikimedia.org/wikipedia/ru/thumb/4/4c/Maxpaynebox.jpg/274px-Maxpaynebox.jpg" alt="Max Payne">
+                        <div class="cover-overlay">
+                            <h3>Max Payne</h3>
+                            <span class="platform-tag">PC/PS2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Moments Section -->
+        <section id="moments" class="content-section moments-section">
+            <div class="container">
+                <h2 class="section-title">🎉 <span class="first-word">Moments</span> that Defined the 2000s</h2>
+                <p class="section-subtitle">The events that shaped our digital world</p>
+                
+                <div class="moments-carousel">
+                    <div class="moments-carousel-container">
+                        <div class="moments-carousel-track">
+                            <div class="moments-slide">
+                                <div class="moment-image">
+                                    <img src="https://i.cbc.ca/1.6938184.1692206684!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_1180/tom-anderson-s-myspace-page-in-2006.jpg" alt="MySpace">
+                                </div>
+                                <h3>MySpace Launch</h3>
+                                <p class="moment-year">2003</p>
+                                <p class="moment-description">The social network that taught us to customize our profiles with glitter and music.</p>
+                            </div>
+                            
+                            <div class="moments-slide">
+                                <div class="moment-image">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQs_DYrc5FZ3K8xfI-EkUtvXsfP5Aku-LJww&s" alt="MTV VMA">
+                                </div>
+                                <h3>MTV VMA 2003</h3>
+                                <p class="moment-year">2003</p>
+                                <p class="moment-description">Madonna, Britney, and Christina's iconic kiss that broke the internet.</p>
+                            </div>
+                            
+                            <div class="moments-slide">
+                                <div class="moment-image">
+                                    <img src="https://static.wikia.nocookie.net/ipod/images/f/fd/IPod_1G_views.jpg/revision/latest?cb=20210212115845" alt="iPod First Generation">
+                                </div>
+                                <h3>iPod First Generation</h3>
+                                <p class="moment-year">2001</p>
+                                <p class="moment-description">1000 songs in your pocket. The device that changed music forever.</p>
+                            </div>
+                            
+                            <div class="moments-slide">
+                                <div class="moment-image">
+                                    <img src="https://i.redd.it/0aiho5peno331.jpg" alt="YouTube Launch">
+                                </div>
+                                <h3>YouTube Launch</h3>
+                                <p class="moment-year">2005</p>
+                                <p class="moment-description">From "Me at the zoo" to viral videos that changed entertainment.</p>
+                            </div>
+                            
+                            <div class="moments-slide">
+                                <div class="moment-image">
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/6/64/Windows_XP_Luna.png" alt="Windows XP">
+                                </div>
+                                <h3>Windows XP Release</h3>
+                                <p class="moment-year">2001</p>
+                                <p class="moment-description">The operating system that lasted longer than most relationships.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="moments-carousel-btn prev-btn" id="momentsPrevBtn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="moments-carousel-btn next-btn" id="momentsNextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    
+                    <div class="moments-carousel-indicators">
+                        <span class="moments-indicator active" data-slide="0"></span>
+                        <span class="moments-indicator" data-slide="1"></span>
+                        <span class="moments-indicator" data-slide="2"></span>
+                        <span class="moments-indicator" data-slide="3"></span>
+                        <span class="moments-indicator" data-slide="4"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Memory Submission Section -->
+        <section id="submit" class="content-section submit-section">
+            <div class="container">
+                <h2 class="section-title">📬 <span class="first-word">Submit</span> Your 2000s Memory</h2>
+                <p class="section-subtitle">Share your favorite moment from the era</p>
+                <div class="submit-form">
+                    <form id="memoryForm">
+                        <div class="form-group">
+                            <textarea id="memoryDescription" name="memoryDescription" placeholder="Type your memory here... For example: 'I remember trading Pokémon cards under the desk in 5th grade...'"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Share Memory
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>RetroRush</h3>
+                    <p>Born before iPhones? You're in the right place.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#soundtrack">Music</a></li>
+                        <li><a href="#movies">Movies</a></li>
+                        <li><a href="#games">Games</a></li>
+                        <li><a href="#toys">Toys</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 RetroRush. Press PLAY and time travel begins.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
